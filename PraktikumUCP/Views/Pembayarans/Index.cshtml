@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PraktikumUCP.Models.Pembayaran>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Total Pembayaran")
+            </th>
+            <th>
+                @Html.DisplayName("Id Pelayan Navigation")
+            </th>
+            <th>
+                @Html.DisplayName("Id Transaksi Navigation")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPembayaran)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPelayanNavigation.IdPelayan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTransaksiNavigation.IdTransaksi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPembayaran"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdPembayaran"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPembayaran"><i class="fa fa-trash-alt fa-l"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

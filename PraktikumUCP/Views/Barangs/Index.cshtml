@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PraktikumUCP.Models.Barang>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Barang")
+            </th>
+            <th>
+                @Html.DisplayName("Stock Barang")
+            </th>
+            <th>
+                @Html.DisplayName("Harga Barang")
+            </th>
+            <th>
+                @Html.DisplayName("Id Supplier Navigation")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HargaBarang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSupplierNavigation.IdSupplier)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdBarang"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdBarang"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdBarang"><i class="fa fa-trash-alt fa-l"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

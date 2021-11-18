@@ -1,0 +1,42 @@
+﻿@model PraktikumUCP.Models.Supplier
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Supplier</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaSupplier)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NamaSupplier)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NoTlpSupplier)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NoTlpSupplier)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AlamatSupplier)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AlamatSupplier)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JenisBarang)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JenisBarang)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdSupplier">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

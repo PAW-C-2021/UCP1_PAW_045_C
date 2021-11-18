@@ -1,0 +1,47 @@
+﻿@model IEnumerable<PraktikumUCP.Models.Pelayan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nama Pelayan")
+            </th>
+            <th>
+                @Html.DisplayName("No Telepon Pelayan")
+            </th>
+            <th>
+                @Html.DisplayName("Alamat Pelayan")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaPelayan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoTelpPelayan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlamatPelayan)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPelayan"><i class="fa fa-marker fa-lg"></i></a> ||
+                <a asp-action="Details" asp-route-id="@item.IdPelayan"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPelayan"><i class="fa fa-trash-alt fa-l"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

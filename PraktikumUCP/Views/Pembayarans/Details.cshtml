@@ -1,0 +1,36 @@
+﻿@model PraktikumUCP.Models.Pembayaran
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pembayaran</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPembayaran)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TotalPembayaran)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPelayanNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPelayanNavigation.IdPelayan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdTransaksiNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdTransaksiNavigation.IdTransaksi)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdPembayaran">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
